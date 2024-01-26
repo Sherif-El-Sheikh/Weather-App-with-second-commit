@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App</title>
+        <!-- favicon -->
+        <link rel="icon" type="image/x-icon" href="Assets/img/favicon.ico">
+            <!-- Google Fonts -->
+            <link rel="preconnect" href="https://fonts.googleapis.com">
+            <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+            <link
+                href="https://fonts.googleapis.com/css2?family=Nunito+Sans:opsz,wght@6..12,300;6..12,400;6..12,500;6..12,600;6..12,700&family=Poppins:wght@300;400;500;600;700&family=Roboto:wght@300;400;500;700&display=swap"
+                rel="stylesheet">
+    <!-- Font Awsome Library -->
+    <link rel="stylesheet" href="Css/all.min.css">
+    <!-- Bootstrap Stylesheet -->
+    <link rel="stylesheet" href="Css/bootstrap.min.css">
+    <!-- Main Stylesheet -->
+    <link rel="stylesheet" href="Css/style.css">
+</head>
+<body>
+    <nav class="nav-bar p-2 mt-3">
+        <div class="container">
+            <a class="logo text-decoration-none" href='/'>
+                <img src="Assets/img/logo.png" class="d-inline-block align-middle mx-2" alt="weather logo" >
+                <div class="logo-type d-inline-block align-middle mt-3">
+                    <h3 class="text-black">Weather</h3>
+                </div>
+            </a>
+            <div class="input-search d-flex justify-content-center align-items-center mt-3">
+                <input id="inputSearch" type="text" class="form-control is-valid" placeholder="Find your location...">
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <div class="container-fluid">
+            <div class="row g-4">
+                <div class="col-sm-6 col-md-7 col-xl-7">
+                    <div class="today forecast mt-2">
+                        <div class="forecast-header" id="today">
+                            <div id="dayName" class="day"></div>
+                            <div id="todayDate" class=" date"></div>
+                            <div class="clearfix"></div>
+                        </div>
+                        <div class="forecast-content">
+                            <div id="todayLocation" class="location"></div>
+                            <div class="degree">
+                                <div class="num">
+                                    <span id="todayTemp"></span>
+                                    <sup c>o</sup>C
+                                </div>
+                                <div class="forecast-icon">
+                                    <img id="todayConditionImg" src="" alt="forecast image" width="90" >
+                                </div>
+                                <div class="clearfix"></div>
+                            </div>
+                            <div id="todayCondition" class="custom"></div>
+                        </div>
+                        <div class="today-deatails mt-3 mb-2">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="humidity mb-3">
+                                        <p>Humidity</p>
+                                            <div class="d-flex justify-content-between align-items-center px-1">
+                                                <i class="fa-solid fa-umbrella"></i>
+                                                <span id="humidity" class="fs-6 align-middle"></span>
+                                            </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="wind mb-3">
+                                        <p>Wind</p>
+                                            <div class="d-flex justify-content-between align-items-center px-1">
+                                                <i class="fa-solid fa-wind"></i>
+                                                <span id="wind" class="fs-6 align-middle"></span>
+                                            </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="wind-direction mb-3">
+                                        <p>Wind Direction</p>
+                                            <div class="d-flex justify-content-between align-items-center px-1">
+                                                <i class="fa-solid fa-compass"></i>
+                                                <span id="windDirection" class="fs-6 align-middle"></span>
+                                            </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="rain mb-3">
+                                        <p>Chance of Rain</p>
+                                            <div class="d-flex justify-content-between align-items-center px-1">
+                                                <i class="fa-solid fa-droplet"></i>
+                                                <span id="rain" class="fs-6 align-middle">0%</span>
+                                            </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        </div>
+                </div>
+                <!-- next day -->
+                <div class="col-sm-6 col-md-5 col-xl-5">
+                    <div class="today forecast mx-2 mt-2 forecast-one forecastBg">
+                        <div class="forecast-header" id="tomorrowDate">
+                            <div class="day next-day-name">Wednesday</div>
+                            <div class="date next-date">17 January</div>
+                            <div class="clearfix"></div>
+                        </div>
+                        <div class="forecast-content">
+                            <div class="degree">
+                                <div class="num">
+                                    <span class="next-max-temp"></span>
+                                    <sup>o</sup>C
+                                </div>
+                                <div class="forecast-icon" id="tomorrow" >
+                                    <img src="" class="next-Condition-img" alt="forecast image" width="90" >
+                                </div>
+                                <div  class="fs-5 mx-5">
+                                    <span class="next-min-temp"></span>
+                                    <sup>o</sup>C
+                                </div>
+                            </div>
+                            <div class="custom next-Condition"></div>
+                        </div>
+                        </div>
+                <!-- after next day -->
+                    <div class="today forecast mx-2 my-3 forecast-one forecastBg nextForecastBg">
+                        <div class="forecast-header" id="tomorrowDate">
+                            <div class="day next-day-name">Wednesday</div>
+                            <div class="date next-date">17 January</div>
+                            <div class="clearfix"></div>
+                        </div>
+                        <div class="forecast-content">
+                            <div class="degree">
+                                <div class="num">
+                                    <span class="next-max-temp"></span>
+                                    <sup>o</sup>C
+                                </div>
+                                <div class="forecast-icon" id="tomorrow" >
+                                    <img src="" class="next-Condition-img" alt="forecast image" width="90" >
+                                </div>
+                                <div  class="fs-5 mx-5">
+                                    <span class="next-min-temp"></span>
+                                    <sup>o</sup>C
+                                </div>
+                            </div>
+                            <div class="custom next-Condition"></div>
+                        </div>
+                        </div>
+                </div>
+        </div>
+    </main>
+
+
+
+
+
+    <script src="Js/bootstrap.bundle.min.js"></script>
+    <script src="Js/main.js"></script>
+</body>
+</html>
